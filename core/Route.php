@@ -38,6 +38,10 @@ class Route
             @$obj->post->$key = $value;
         }
 
+        foreach ($_FILES as $key => $value){
+            @$obj->file->$key = $value;
+        }
+
         return $obj;
     }
 

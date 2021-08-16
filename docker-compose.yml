@@ -1,12 +1,12 @@
 version: "3"
 
 services:
-  webjumpapp:
+  care:
     build:
       dockerfile: app.dockerfile
       context: .
-    image: webjumpapp/php
-    container_name: webjumpapp
+    image: care/php
+    container_name: care
     restart: always
     ports:
       -  "8081:80"
@@ -15,24 +15,23 @@ services:
     depends_on:
       - "mysql"
     networks: 
-      - webjump-network
+      - care-network
 
   mysql:
     image: mysql:5.7
     container_name: mysql
 
     networks:
-        - webjump-network    
+        - care-network    
     ports:
       - "3306:3306"
     
     environment:
       MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: webjump-products
-      
+      MYSQL_DATABASE: care
     restart: always
 
 
 networks: 
-  webjump-network:
+  care-network:
       driver: bridge

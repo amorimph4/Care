@@ -6,6 +6,6 @@ use Core\BaseModel;
 
 class User extends BaseModel
 {
-    public $table = "users";
+    public $table = "user";
 
 }

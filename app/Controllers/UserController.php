@@ -36,16 +36,15 @@ class UserController extends BaseController
 
         $data['password'] = password_hash($request->post->password, PASSWORD_BCRYPT);
 
-        try{
+        try {
             $this->user->create($data);
             return Redirect::route('/', [
                 'success' => ['Usuário criado com sucesso!']
             ]);
-        }catch(\Exception $e){
+        } catch (\Exception $e) {
             return Redirect::route('/', [
                 'errors' => [$e->getMessage()]
             ]);
         }
     }
-
 }

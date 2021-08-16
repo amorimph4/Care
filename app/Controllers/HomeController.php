@@ -7,10 +7,10 @@ use Core\SeederDataBase;
 
 class HomeController extends BaseController
 {
-    public function index(){
-    	SeederDataBase::tablesCreation();
+    public function index()
+    {
+        SeederDataBase::tablesCreation();
         $this->setPageTitle('Home');
         $this->renderView('home/index', 'layout');
     }
-
 }

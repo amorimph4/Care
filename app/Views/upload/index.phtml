@@ -2,8 +2,8 @@
     <h1 class="h1">
         <?php echo $this->getPageTitle(); ?>
         <?php if($this->auth->check()) : ?>
-        <a href="/category/create" class="btn btn-primary pull-right">
-            <i class="glyphicon glyphicon-plus-sign"></i> Nova Categoria
+        <a href="/upload/create" class="btn btn-primary pull-right">
+            <i class="glyphicon glyphicon-plus-sign"></i> Importar Notas
         </a>
         <?php endif; ?>
     </h1>
@@ -14,7 +14,7 @@
     <div class="card-content">
         <div class="table-responsive">
             <table class="table data-table">
-                <?php echo $this->view->categorys; ?>
+                <?php echo $this->view->files; ?>
             </table>
         </div>
     </div>
